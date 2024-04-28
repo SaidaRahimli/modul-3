@@ -117,10 +117,9 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-
   });
   
-  
+
   
   const validateInput = (input) => {
     let value = input.value
