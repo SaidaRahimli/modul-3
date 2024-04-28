@@ -81,7 +81,6 @@ document.addEventListener("DOMContentLoaded", function () {
           alert("Something went wrong. Please try again later.");
         });
     }
-  
     
     function updateConversionFromRight() {
       const amount = parseFloat(inputRight.value);
