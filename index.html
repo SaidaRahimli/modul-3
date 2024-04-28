@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <img src="./pictures/icon.png" alt="logo" class="logo">
+            <nav class="nav">
+                <ul class="menu">
+                    <li class="menu-item">
+                        <a href="#" class="menu-link menu-link-active">БАНК</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#" class="menu-link">БИЗНЕС</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#" class="menu-link">ИНВЕСТИЦИИ</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#" class="menu-link">СТРАХОВАНИЕ</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#" class="menu-link">МОБАЙЛ</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#" class="menu-link">ПУТЕШЕСТВИЯ</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="#" class="menu-link">РАЗВЛЕЧЕНИЯ</a>
+                    </li>
+                </ul>
+            </nav>
+            <button class="header-btn">ВОЙТИ</button>
+        </div>
+    </header>
+    <main class="main">
+        <div class="container">
+            <h1 class="title">Конвертер валют онлайн</h1>
+            <div class="calc-body">
+                <div class="left">
+                    <p class="text">У меня есть</p>
+                    <nav class="nav-left">
+                        <button class="btn nav-left-btn nav-left-btn-active">RUB</button>
+                        <button class="btn nav-left-btn">USD</button>
+                        <button class="btn nav-left-btn">EUR</button>
+                        <button class="btn nav-left-btn">GBP</button>
+                    </nav>
+                    <div class="inp-c">
+                       <input class="inp inp-left" type="text" autofocus>
+                        <p class="inp-left-curt inp-curt">1 RUB = 0.0135 USD</p>
+                    </div>
+                </div>
+                <div class="right">
+                    <p class="text">Хочу приобрести</p>
+                    <nav class="nav-right">
+                        <button class="btn nav-right-btn">RUB</button>
+                        <button class="btn nav-right-btn nav-right-btn-active">USD</button>
+                        <button class="btn nav-right-btn">EUR</button>
+                        <button class="btn nav-right-btn">GBP</button>
+                    </nav>
+                    <div class="inp-c">
+                        <input class="inp inp-right" type="text">
+                        <p class="inp-right-curt inp-curt">1 USD = 73.8896 RUB</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="./index.js"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+ul, li{
+    list-style: none;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+.header {
+    background: #F5F5F6;
+    padding: 9px 0;
+    margin-bottom: 56px;
+}
+.header-container {
+    max-width: 950px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+.menu-item {
+    margin-right: 20px;
+}
+.menu-link {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 13px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.06em;
+    color: #959BA4;
+    transition: 0.3s;
+}
+
+.menu-link-active {
+    color: #000000;
+}
+.header-btn {
+    padding: 10px 9px;
+    border: none;
+    background-color:white;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.title{
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42px;
+    color: #000000;
+    margin-bottom: 33px;
+}
+
+.container{
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.calc-body{
+    display: flex;
+    justify-content: space-between;
+}
+
+.text{
+    font-size: 12px;
+    line-height: 28px;
+    color: #9F9F9F;
+}
+
+.nav-left, .nav-right{
+    font-size: 0;
+}
+
+.btn{
+    border: 1px solid #E5E5E5;
+    width: 64px;
+    font-size: 12px;
+    line-height: 28px;
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+.btn:first-child{
+    border-radius: 3px 0 0 3px;
+}
+
+.btn:last-child{
+    border-radius: 0 3px 3px 0;
+}
+
+.nav-left-btn-active, .nav-right-btn-active{
+    color: #FFFFFF;
+    background: #833AE0;
+}
+
+.inp-c{
+    width: 255px;
+    height: 102px;
+    border: 1px solid #E5E5E5;
+    border-radius: 3px;
+    outline: none;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42px;
+    color: #000000;
+    padding: 11px 14px 5px;
+}
+
+.inp{
+    display: inline-block;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42px;
+    width: 100%;
+    border: none;
+    margin-bottom: 20px;
+    outline: none;
+}
+
+.nav-left, .nav-right{
+    margin-bottom: 30px;
+}
+
+.inp-curt{
+    font-size: 12px;
+    line-height: 14px;
+    color: #C6C6C6;
+}
