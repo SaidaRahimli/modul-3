@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
     inputLeft.addEventListener("input", function () {
       validateInput(inputLeft);
-      updateConversion();
+      updateConversionFromRight();
     });
   
   
@@ -37,7 +37,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         btn.classList.add("nav-right-btn-active");
     
-        updateConversion(); 
+        updateConversion();
+
       });
     });
     inputRight.addEventListener("input", function () {
@@ -82,21 +83,56 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
     
+    // function updateConversionFromRight() {
+    //   const amount = parseFloat(inputRight.value);
+    //   const baseCurrency = document.querySelector(".nav-right-btn-active").innerText;
+    //   const targetCurrency = document.querySelector(".nav-left-btn-active").innerText;
+      
+    //   if (isNaN(amount)) {
+    //     inputLeft.value = '';
+    //     return;
+    // } 
+  
+    //   if (baseCurrency === targetCurrency) {
+    //     inputLeft.value = inputRight.value; 
+    //     return;
+    //   }
+  
+    //   fetch(`https://v6.exchangerate-api.com/v6/341bca8980344927b5c50d38/latest/${baseCurrency}`)
+    //     .then((res) => {
+    //       if (!res.ok) {
+    //         throw new Error('Failed to fetch exchange rates');
+    //       }
+    //       return res.json();
+    //     })
+    //     .then((data) => {
+    //       const rate = data.conversion_rates[targetCurrency];
+    //       if (!rate) {
+    //         throw new Error('Exchange rate not available');
+    //       }
+    //       inputLeft.value = (amount / rate).toFixed(5);
+    //     })
+    //     .catch((error) => {
+    //       console.error("Error fetching data:", error);
+    //       alert("Something went wrong. Please try again later.");
+    //     });
+    // }
+
     function updateConversionFromRight() {
       const amount = parseFloat(inputRight.value);
       const baseCurrency = document.querySelector(".nav-right-btn-active").innerText;
       const targetCurrency = document.querySelector(".nav-left-btn-active").innerText;
-      
+    
       if (isNaN(amount)) {
         inputLeft.value = '';
         return;
-    } 
-  
+      } 
+    
       if (baseCurrency === targetCurrency) {
         inputLeft.value = inputRight.value; 
         return;
       }
-  
+    
       fetch(`https://v6.exchangerate-api.com/v6/341bca8980344927b5c50d38/latest/${baseCurrency}`)
         .then((res) => {
           if (!res.ok) {
@@ -116,6 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
           alert("Something went wrong. Please try again later.");
         });
     }
+    
 
   });
   
@@ -134,3 +171,4 @@ document.addEventListener("DOMContentLoaded", function () {
   
     input.value = value;
   };
+
