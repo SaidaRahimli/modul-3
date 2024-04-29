@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const inputRight = document.querySelector(".inp-right");
   const currencyBtnsLeft = document.querySelectorAll(".nav-left-btn");
   const currencyBtnsRight = document.querySelectorAll(".nav-right-btn");
-
+ 
   function setDefaultValues() {
     inputLeft.value = '1';
     validateInput(inputLeft);
@@ -11,13 +11,13 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   setDefaultValues();
 
+
   currencyBtnsLeft.forEach(function (btn) {
     btn.addEventListener("click", function () {
       currencyBtnsLeft.forEach(function (el) {
         el.classList.remove("nav-left-btn-active");
       });
       btn.classList.add("nav-left-btn-active");
-
       updateConversion();
     });
   });
@@ -33,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
         el.classList.remove("nav-right-btn-active");
       });
       btn.classList.add("nav-right-btn-active");
-
       updateConversion();
     });
   });
@@ -76,6 +75,20 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error("Error fetching data:", error);
         alert("Something went wrong. Please try again later.");
       });
+      fetch(`https://v6.exchangerate-api.com/v6/23c3031f1440cd0f25a1a86b/latest/${baseCurrency}`)
+  .then(res => res.json())
+  .then(data => {
+    console.log(data);
+    let inpLeft  = document.querySelector(".inp-left-curt"); 
+    inpLeft.innerHTML= `1 ${baseCurrency} = ${data.conversion_rates[targetCurrency]} ${targetCurrency} `;
+  });
+
+  fetch(`https://v6.exchangerate-api.com/v6/23c3031f1440cd0f25a1a86b/latest/${targetCurrency}`)
+   .then(res => res.json())
+   .then(data => {
+    let pRight = document.querySelector(".inp-right-curt");
+    pRight.innerHTML= `1 ${targetCurrency} = ${data.conversion_rates[baseCurrency]} ${baseCurrency}`
+  });
   }
 
   function updateConversionFromRight() {
@@ -115,7 +128,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-
 const validateInput = (input) => {
   let value = input.value
     .replace(/,/g, '.')
@@ -123,9 +135,14 @@ const validateInput = (input) => {
     .replace(/(\.[^.]*\.)+/g, '$1')
     .replace(/(\.\d*)\./g, '$1');
 
-  if (value.startsWith('.') && !/\d+\./.test(value)) {
-    value = '0' + value;
-  }
+if (value === '0' && input.value.length === 1 && input.value !== '0.') {
+  input.value = '0.';
+  return;
+}
 
-  input.value = value;
+input.value = value;
 };
+
+
+
+   
